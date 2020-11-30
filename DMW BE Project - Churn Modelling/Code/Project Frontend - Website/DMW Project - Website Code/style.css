@@ -1,0 +1,179 @@
+* {
+    font-family: Candara;
+}
+
+.header1 {
+    background-color: #0f2b4e;
+    color: white;
+}
+
+#trustlogo {
+    margin-left: 25px;
+    height: 105px;
+    width: 105px;
+    display: inline-block;
+}
+
+#trustlogo1 {
+    height: 105px;
+    width: 105px;
+    border-radius: 105px;
+}
+
+#collegename {
+    display: inline-block;
+    text-align: center;
+    width: 81%;
+}
+
+#collegelogo {
+    margin: 10px;
+    height: 105px;
+    width: 105px;
+    display: inline-block;
+}
+
+#collegelogo1 {
+    height: 105px;
+    width: 105px;
+    border-radius: 105px;
+}
+
+#projectname {
+    text-align: center;
+}
+
+.header2 {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: #19aab4;
+    color: #0f2b4e;
+}
+
+#vv {
+    margin-left: 468px;
+    display: inline-block;
+    font-size: 18px;
+}
+
+#guide {
+    display: inline-block;
+    margin-left: 50px;
+    position: relative;
+    bottom: 37px;
+    font-size: 18px;
+}
+
+
+/*------------------------------------------------*/
+
+ul {
+    margin: 0px auto 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0;
+    min-width: 200px;
+    margin: 10px;
+    padding: 0 40px;
+    background-color: #0f2b4e;
+}
+
+@media screen and (min-width: 400px) {
+    ul {
+        flex-direction: row;
+        min-width: 600px;
+    }
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.4s ease;
+    padding: 10px;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #00f7ff;
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+a:hover {
+    color: #00f7ff;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+
+/*----------------BODYYYYYY--------------------------------*/
+
+#content {
+    margin-left: 200px;
+    margin-right: 200px;
+    border-left: 1px solid rgb(219, 215, 215);
+    border-right: 1px solid rgb(219, 215, 215);
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#heading {
+    text-decoration: underline;
+    color: #0f2b4e;
+}
+
+#abstract {
+    font-size: 20px;
+    color: #1848b1;
+    text-decoration: underline;
+}
+
+p {
+    font-size: 18px;
+}
+
+#lr,
+#knn,
+#svm,
+#nb,
+#rf {
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+#button {
+    color: #00f7ff;
+    background-color: #163b68;
+    height: 30px;
+    width: 80px;
+    font-size: medium;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+#button:hover {
+    background-color: #000000;
+}
+
+img {
+    border: 2px solid black;
+    border-radius: 15px;
+}

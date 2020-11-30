@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMW Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header1">
+            <div id="trustlogo"><img id="trustlogo1" src="images/trust.png"></div>
+            <!-- inline block-->
+            <div id="collegename">
+                <h1>PCET's</h1>
+                <h1>PIMPRI CHINCHWAD COLLEGE OF ENGINEERING</h1>
+            </div>
+            <!-- inline block-->
+            <div id="collegelogo"><img id="collegelogo1" src="images/collegelogo.jpg"></div>
+            <!-- inline block-->
+        </div>
+
+        <div class="header2">
+            <div id="projectname">
+                <h2>TITLE- BANK CUSTOMERS EXITNG PREDICTIVE MODEL</h2>
+            </div>
+            <!--block-->
+            <div id="vv">
+                <p>VARUN GADDE - BECOB203</p>
+                <p>VEDANT UPGANLAWAR - BECOB270</p>
+            </div>
+            <div id="guide">
+                <p>GUIDE: PROF. PRIYA SURANA</p>
+            </div>
+        </div>
+
+        <div class="nav">
+            <ul id="navbar">
+                <li><a href="#description">DESCRIPTION</a></li>
+                <li><a href="#preprocessing">PREPROCESSING</a></li>
+                <li><a href="#classification">CLASSIFICATION</a></li>
+                <li><a href="#metrics">METRICS</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+
+    <div id="content">
+        <div id="description">
+            <h2 id="heading">1. DESCRIPTION</h2>
+            <p id="abstract"><strong>1.A</strong> PROBLEM STATEMENT</p>
+            <p style="font-size: 18px">Consider a labeled dataset belonging to an application domain. Apply suitable data preprocessing steps such as handling of null values, data reduction, discretization. For prediction of class labels of given data instances, build classifier
+                models using different techniques (minimum 3), analyze the confusion matrix and compare these models. Also apply cross validation while preparing the training and testing datasets.</p>
+            <p id="abstract"><strong>1.B</strong> DATASET DESCRIPTION</p>
+            <p style="font-size: 18px">A bank is investigating a very high rate of customer leaving the bank. Here is a 10,000 records dataset to investigate and predict which of the customers are more likely to leave the bank soon.</p>
+            <p style="font-size: 18px">
+                We will be guiding you with the implementation part simultaneosuly. Current project can be run on any Python,Jupyter notebook,Google Colab etc.
+                <p>
+                    The project requires the following imports:
+                    <ol style="color: rgb(202, 73, 14);font-size: 18px;">
+                        <li> Numpy - for Linear Algebra</li>
+                        <li> Pandas - for Data Preprocessing and CSV I/O </li>
+                        <li> Matplotlib - Data Visualization </li>
+                        <li> sklearn.modelselection - for Modelling </li>
+                        <li> sklearn.linear_model - for Logistic Regression Classifier </li>
+                        <li> sklearn.svm - for Support Vector Classifier </li>
+                        <li> sklearn.naive_bayes - for Gaussian Naive Bayes Classifier</li>
+                        <li> sklearn.neighbors - for KNeighbors Classifier</li>
+                        <li> sklearn.ensemble - for Random Forest Classifier</li>
+                        <li> sklearn.metrics - for Accuracy Score, Confusion Matrix and Classification Report</li>
+                    </ol>
+                    <br> As and when the need aries the imports are executed in the project.
+                </p>
+                <p>Title of the dataset that is to be anaysed throughout the project is 'Churn_Modelling.csv' which is manually uploaded to the execution environment.We loaded the dataset into a variable 'data'.Following is the description of all the attributes
+                    of the dataframe -</p>
+                <img src="images/results/data_info.PNG" style="height: 350px;width:350px">
+            </p>
+            <p id="abstract"><strong>1.C</strong> ATTRIBUTES ANALYSIS</p>
+            <p>
+                On analysis of the attributes of dataset, attributes are categorized as follows:
+                <ol style="font-size: 18px">
+                    <strong><li> Categorical Variables</li></strong>
+                    <ol style="color: rgb(202, 73, 14)"> Geography</ol>
+                    <ol style="color: rgb(202, 73, 14)"> Gender</ol>
+                    <ol style="color: rgb(202, 73, 14)"> HasCrCard</ol>
+                    <ol style="color: rgb(202, 73, 14)"> IsActiveMember</ol>
+                    <ol style="color: rgb(202, 73, 14)"> Exited</ol>
+                    <ol style="color: rgb(202, 73, 14)"> NumOfProducts</ol>
+                    <strong><li> Numerical Variables</li></strong>
+                    <ol style="color: rgb(202, 73, 14)">CreditScore</ol>
+                    <ol style="color: rgb(202, 73, 14)">Age</ol>
+                    <ol style="color: rgb(202, 73, 14)">Tenure</ol>
+                    <ol style="color: rgb(202, 73, 14)">Balance</ol>
+                    <ol style="color: rgb(202, 73, 14)">EstimatedSalary</ol>
+                </ol>
+            </p>
+            <p>From the following features,<strong>'Exited'</strong> is a categorical feature which determines whether the customer left the bank or not.</p>
+        </div>
+
+        <div id="preprocessing">
+            <h2 id="heading">2. PREPROCESSING</h2>
+            <p id="abstract"><strong>2.A</strong> MISSING VALUES</p>
+            <p>We can check missing value also by isnull() method as below:</p>
+            <img src="images/results/missing_values.PNG" style="height: 270px;width:235px">
+            <p>From above, it can be concluded that there are no missing value in any of the columns. There are 10000 items and each column has 10000 non-null items.</p>
+            <p id="abstract"><strong>2.B</strong> DROPPING UNNECESSARY COLUMNS</p>
+            <img src="images/results/data_reduction.PNG" style="height: 230px;width:1000px">
+            <p> Here we can clearly observe that columns<strong>'Rownumber', 'CustomerId' and 'Surname' </strong> does not provide any meaningful information. Hence we are dropping the above mentioned columns.</p>
+            <p id="abstract"><strong>2.C</strong> DISCRETIZATION</p>
+            <p>Now we will convert the following attributes into categorical values.</p>
+            <ol>
+                <li>Geography</li>
+                <img src="images/results/discrete_geography.PNG" style="height: 200px;width:400px">
+                <br>
+                <br>
+                <li>Gender</li>
+                <img src="images/results/discrete_gender.PNG" style="height: 200px;width:225px">
+                <br>
+                <br>
+                <li>Tenure</li>
+                <img src="images/results/discrete_tenure.PNG" style="height: 200px;width:1000px">
+                <br>
+                <br>
+                <li>NumOfProducts</li>
+                <img src="images/results/discrete_products.PNG">
+            </ol>
+        </div>
+
+        <div id="classification">
+            <h2 id="heading">3. CLASSIFICATION</h2>
+            <p id="abstract"><strong>3.A</strong> MODELLING</p>
+            <p>
+                Modelling includes creation of train, test data by splitting the dataset. The steps followed below are:
+                <ol style="font-size: 18px;">
+                    <li> Create X_train by dropping the dependent attribute <strong>"Exited"</strong> from the dataframe df.</li>
+                    <li> Create y_train by considering the dependent attribute <strong>"Exited"</strong> from the dataframe df.</li>
+                    <li> Normalizing necessary attributes (CreditScore, Age, Balance, EstimatedSalary) </li>
+                    <li> Splitting the X_train and y_train as X_Train,y_Train,X_Test,y_test. The split ratio varies according to the discretion of the user. Here we have used the splitting ratio as 0.33.</li>
+                </ol>
+                <br> Here we have executed some instructions for better understanding of the splitted data shape.
+            </p>
+            <img src="images/results/modelling.PNG" style="height: 350px;width:600px"><br>
+            <img src="images/results/test_train_split.PNG" style="height: 400px;width:480px"><br><br>
+            <p id="abstract" style="display:inline"><strong>3.B</strong> LOGISTIC REGRESSION</p><input type="checkbox" id="lr" style="display:inline-block"><br><br>
+            <p id="abstract" style="display:inline"><strong>3.C</strong> SVM</p><input type="checkbox" id="svm" style="display:inline-block"><br><br>
+            <p id="abstract" style="display:inline"><strong>3.D</strong> NAIVE BAYES</p><input type="checkbox" id="nb" style="display:inline-block"><br><br>
+            <p id="abstract" style="display:inline"><strong>3.E</strong> KNN </p><input type="checkbox" id="knn" style="display:inline-block"><br><br>
+            <p id="abstract" style="display:inline"><strong>3.F</strong> RANDOM FOREST </p><input type="checkbox" id="rf" style="display:inline-block"><br><br>
+            <input type="button" id="button" onclick="show()" value="CLASSIFY"><i class="fa fa-play"></i>
+            <br>
+            <br>
+            <img src="images/results/back_demo.PNG" id="image" style="height: 650px;width:700px;border:2px solid black;border-radius: 20px;">
+        </div>
+
+        <div id="metrics">
+            <h2 id="heading">4. METRICS</h2>
+            <p id="abstract"><strong>4.A</strong> K-FOLD CROSS VALIDATION</p>
+            <p>In this case of cross validation, we will divide the complete dataset into k parts.Each section will act as the test set and rest of the k-1 sections will be used for training.Hence we get k different accuracy scores.For this dataset, we have
+                <strong>k=10</strong>.Finally from these k scores, we obtain a mean accuracy which helps us compare the classifiers with better precision.Below is implementation of k-fold cross validation on Random Forest Classifier -</p>
+            <img src="images/results/random_cross.PNG" style="height: 170px;width:730px">
+            <p>Further classifier's summary is given in the below table (Following table is arranged in descending order of their respective mean accuracies) -</p>
+            <img src="images/results/summary.PNG" style="height: 550px;width:800px">
+        </div>
+    </div>
+
+
+</body>
+
+</html>
